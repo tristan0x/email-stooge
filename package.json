@@ -1,6 +1,6 @@
 {
   "name": "email-stooge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tool for preparing HTML files for emailing: inlines styles, minifies, generates text equivalent",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +15,17 @@
     "minify",
     "text",
     "html",
-    "email"
+    "email",
+    "cogniteev"
   ],
   "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiencaselli/email-stooge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damiencaselli/email-stooge/issues"
+  },
   "dependencies": {
     "commander": "^2.8.1",
     "glob": "^5.0.13",

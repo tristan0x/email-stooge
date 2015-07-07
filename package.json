@@ -1,0 +1,29 @@
+{
+  "name": "email-stooge",
+  "version": "0.1.0",
+  "description": "Tool for preparing HTML files for emailing: inlines styles, minifies, generates text equivalent",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "email-stooge": "./bin/email-stooge"
+  },
+  "main": "stooge.js",
+  "author": "Damien Caselli <damien.caselli@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "minify",
+    "text",
+    "html",
+    "email"
+  ],
+  "preferGlobal": true,
+  "dependencies": {
+    "commander": "^2.8.1",
+    "glob": "^5.0.13",
+    "html-minifier": "^0.7.2",
+    "html-to-text": "^1.3.1",
+    "juice": "^1.3.2",
+    "mkdirp": "^0.5.1"
+  }
+}

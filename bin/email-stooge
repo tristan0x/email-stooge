@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+'use strict';
+
+process.title = 'email-stooge';
+
+var program = require('commander');
+var stooge = require('../stooge');
+
+program
+  .option('-d, --dist-dir <path>', 'dist directory (defaults to `dist`)', 'dist')
+  .option('-s, --source-dir <path>', 'dist directory (defaults to `templates`)', 'templates')
+  .option('-f, --files-pattern <pattern>', 'files glob pattern (defaults to `*.html`)', '*.html')
+  .parse(process.argv);
+
+return stooge({
+  sourceDir: program.sourceDir,
+  distDir: program.distDir,
+  filesPattern: program.filesPattern
+}).prepare();

@@ -12,6 +12,8 @@ module.exports = function(options) {
   var distDir = options.distDir || 'dist';
   var srcDir = options.sourceDir || 'templates';
   var filesPattern = options.filesPattern || '*.html';
+  var minifiedSuffix = options.minifiedSuffix || '.min.html';
+  var textSuffix = options.textSuffi || '.txt';
 
   var prepare = function() {
     mkdirp.sync(distDir);
@@ -26,8 +28,8 @@ module.exports = function(options) {
 
       files.forEach(function(srcFilepath) {
         var filename = path.basename(srcFilepath);
-        var destMinifiedFilename = filename.replace('.html', '.min.html');
-        var destTextFilename = filename.replace('.html', '.txt');
+        var destMinifiedFilename = filename.replace('.html', minifiedSuffix);
+        var destTextFilename = filename.replace('.html', textSuffix);
 
         destMinifiedFilename = path.join(distDir, destMinifiedFilename);
         destTextFilename = path.join(distDir, destTextFilename);

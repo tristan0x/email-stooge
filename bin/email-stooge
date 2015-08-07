@@ -10,10 +10,14 @@ program
   .option('-d, --dist-dir <path>', 'dist directory (defaults to `dist`)', 'dist')
   .option('-s, --source-dir <path>', 'dist directory (defaults to `templates`)', 'templates')
   .option('-f, --files-pattern <pattern>', 'files glob pattern (defaults to `*.html`)', '*.html')
+  .option('-m, --minified-suffix <pattern>', 'generated minified file suffix (default to `.min.html`)', '.min.html')
+  .option('-t, --text-suffix <pattern>', 'generated text file suffix (default to `.txt`)', '.txt')
   .parse(process.argv);
 
 return stooge({
   sourceDir: program.sourceDir,
   distDir: program.distDir,
-  filesPattern: program.filesPattern
+  filesPattern: program.filesPattern,
+  minifiedSuffix: program.minifiedSuffix,
+  textSuffix: program.textSuffix
 }).prepare();

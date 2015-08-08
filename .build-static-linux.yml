@@ -1,0 +1,18 @@
+# docker-compose configuration file spawning the build
+# of a Linux static executable inside a Docker container.
+#
+# To generate the static executable in the ./dist/ directory,
+# run the following command:
+#
+#   docker-compose -f .build-static-linux.yml up
+#
+# Note: when launched from MacOS, Git repository should be 
+# in $HOME so that it is mounted in the Docker Virtualbox VM.
+build:
+  image: node-nexe
+  environment:
+    LDFLAGS: "-static-libgcc -static-libstdc++"
+  volumes:
+     - $PWD:/app
+  command: >
+    nexe -i /app/bin/email-stooge -o /app/dist/email-stooge-linux
